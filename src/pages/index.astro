@@ -1,0 +1,533 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RequiredB12HeadScripts from '../components/RequiredB12HeadScripts.astro';
+import RequiredB12FooterScripts from '../components/RequiredB12FooterScripts.astro';
+import FAQAccordion from '../components/FAQAccordion.tsx';
+import TestimonialsCarousel from '../components/TestimonialsCarousel.tsx';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>YogaFlow Pro - Seamless Yoga Session Booking</title>
+    <meta name="description" content="An innovative web application designed to create a seamless and intelligent yoga session booking experience." />
+    <RequiredB12HeadScripts />
+  </head>
+
+  <body>
+    <Header currentPage="/" />
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-secondary via-background to-accent/10"></div>
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%236b9967%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 sm:py-20">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+            YogaFlow Pro
+          </h1>
+          <p class="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+            An innovative web application designed to create a seamless and intelligent yoga session booking experience.
+          </p>
+          <p class="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+            Experience personalized recommendations based on your preferences, real-time updates on class availability, and an interactive user interface that enhances your engagement.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <a href="/browse-classes" class="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all text-sm sm:text-base">
+              Book a Session
+            </a>
+            <a href="/#how-it-works" class="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/80 transition-colors border border-primary/20 text-sm sm:text-base">
+              How It Works
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-12 sm:py-20 bg-background">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div>
+              <h2 class="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4 sm:mb-6">About YogaFlow Pro</h2>
+              <p class="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
+                YogaFlow Pro is built on the belief that every individual deserves a personalized yoga journey. Our mission is to remove barriers to wellness by creating an intelligent platform that understands your unique needs, preferences, and goals.
+              </p>
+              <p class="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
+                We bring together yoga enthusiasts, instructors, and wellness experts to foster a community dedicated to mindfulness, growth, and transformation through the ancient practice of yoga.
+              </p>
+              <p class="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                With advanced recommendation algorithms and intuitive scheduling tools, we ensure that finding the perfect yoga class becomes an effortless part of your wellness routine.
+              </p>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg mt-8 md:mt-0">
+              <img src="https://cdn.b12.io/client_media/kRdMW9yE/e340faa3-38ae-11f1-956e-0242ac110002-T3300ZzJnx2zO0N0biha_.jpg" alt="Yoga and wellness illustration" class="w-full h-auto" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-12 sm:py-20 bg-secondary/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-2 sm:mb-4">Our Services</h2>
+            <p class="text-base sm:text-lg text-muted-foreground">Everything you need for your perfect yoga experience</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Service Card 1 -->
+            <div class="bg-background rounded-xl p-6 sm:p-8 shadow-sm border border-border hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg sm:text-xl font-heading font-semibold text-foreground mb-3">Personalized Recommendations</h3>
+              <p class="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Our intelligent algorithm learns your preferences and suggests classes tailored to your goals, experience level, and schedule.
+              </p>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="bg-background rounded-xl p-6 sm:p-8 shadow-sm border border-border hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg sm:text-xl font-heading font-semibold text-foreground mb-3">Easy Scheduling</h3>
+              <p class="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Book your yoga sessions with just a few clicks. View real-time class availability, instructor details, and manage your bookings effortlessly.
+              </p>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="bg-background rounded-xl p-6 sm:p-8 shadow-sm border border-border hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg sm:text-xl font-heading font-semibold text-foreground mb-3">Interactive Tools</h3>
+              <p class="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Access progress tracking, personalized intake forms, and community features that enhance your entire yoga journey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="py-12 sm:py-20 bg-background">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-2 sm:mb-4">How It Works</h2>
+            <p class="text-base sm:text-lg text-muted-foreground">Get started in just a few simple steps</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <!-- Step 1 -->
+            <div class="relative">
+              <div class="flex flex-col items-center">
+                <div class="w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl sm:text-2xl font-bold font-heading mb-4">
+                  1
+                </div>
+                <h3 class="text-base sm:text-lg font-heading font-semibold text-foreground mb-2 text-center">Create Profile</h3>
+                <p class="text-muted-foreground text-center text-xs sm:text-sm">Sign up and share your yoga preferences, goals, and experience level.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative">
+              <div class="flex flex-col items-center">
+                <div class="w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl sm:text-2xl font-bold font-heading mb-4">
+                  2
+                </div>
+                <h3 class="text-base sm:text-lg font-heading font-semibold text-foreground mb-2 text-center">Get Recommendations</h3>
+                <p class="text-muted-foreground text-center text-xs sm:text-sm">Our algorithm suggests personalized classes based on your profile.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative">
+              <div class="flex flex-col items-center">
+                <div class="w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl sm:text-2xl font-bold font-heading mb-4">
+                  3
+                </div>
+                <h3 class="text-base sm:text-lg font-heading font-semibold text-foreground mb-2 text-center">Browse & Book</h3>
+                <p class="text-muted-foreground text-center text-xs sm:text-sm">Explore available classes and book sessions that work for you.</p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative">
+              <div class="flex flex-col items-center">
+                <div class="w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl sm:text-2xl font-bold font-heading mb-4">
+                  4
+                </div>
+                <h3 class="text-base sm:text-lg font-heading font-semibold text-foreground mb-2 text-center">Practice & Grow</h3>
+                <p class="text-muted-foreground text-center text-xs sm:text-sm">Attend your classes and track your progress in your wellness journey.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scheduling Section -->
+      <section id="scheduling" class="py-12 sm:py-20 bg-secondary/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div class="rounded-xl overflow-hidden shadow-lg order-2 md:order-1 mt-8 md:mt-0">
+              <img src="https://cdn.b12.io/client_media/kRdMW9yE/e389f32f-38ae-11f1-b45b-0242ac110002-S4KkKmgC0pG5rnAxTaJU-.jpg" alt="Scheduling interface mockup" class="w-full h-auto" />
+            </div>
+            <div class="order-1 md:order-2">
+              <h2 class="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4 sm:mb-6">Smart Scheduling</h2>
+              <p class="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
+                Our robust scheduling platform makes managing your yoga practice effortless. View available classes in real-time, see instructor details, and book sessions that fit your lifestyle.
+              </p>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start">
+                  <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-muted-foreground">Filter by class type, difficulty level, and instructor</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-muted-foreground">Instant booking confirmation and reminders</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-muted-foreground">Track your progress and class history</span>
+                </li>
+              </ul>
+              <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="/browse-classes" class="inline-block px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all">
+                  Browse Classes Now
+                </a>
+                <a href="#intake-form" class="inline-block px-8 py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/80 transition-colors border border-primary/20">
+                  Get Personalized Recommendations
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intake Form Section -->
+      <section id="intake-form" class="py-20 bg-background">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-heading font-bold text-foreground mb-4">Personalized Intake Form</h2>
+            <p class="text-lg text-muted-foreground">
+              Tell us about your yoga journey so we can recommend the perfect classes for you.
+            </p>
+          </div>
+
+          <div class="bg-secondary/30 rounded-xl p-8 border border-border">
+            <form data-form-id="567795fa-6bb0-4451-98e2-c09cfb8c5234" class="space-y-6">
+              <!-- Yoga Goals -->
+              <div>
+                <label for="yoga_goals" class="block text-sm font-semibold text-foreground mb-2">
+                  What are your primary yoga goals? <span class="text-destructive">*</span>
+                </label>
+                <textarea
+                  id="yoga_goals"
+                  name="yoga_goals"
+                  required
+                  rows="4"
+                  class="w-full px-4 py-2 rounded-lg border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  placeholder="e.g., Increase flexibility, reduce stress, build strength..."
+                ></textarea>
+              </div>
+
+              <!-- Experience Level -->
+              <div>
+                <label for="experience_level" class="block text-sm font-semibold text-foreground mb-2">
+                  Experience Level <span class="text-destructive">*</span>
+                </label>
+                <select
+                  id="experience_level"
+                  name="experience_level"
+                  required
+                  class="w-full px-4 py-2 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option value="">Select your experience level</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+
+              <!-- Preferred Times -->
+              <div>
+                <label class="block text-sm font-semibold text-foreground mb-3">
+                  Preferred Class Times <span class="text-destructive">*</span>
+                </label>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" name="preferred_times" value="Early Morning (6-8 AM)" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Early Morning (6-8 AM)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="preferred_times" value="Morning (8 AM-12 PM)" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Morning (8 AM-12 PM)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="preferred_times" value="Afternoon (12 PM-5 PM)" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Afternoon (12 PM-5 PM)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="preferred_times" value="Evening (5 PM-8 PM)" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Evening (5 PM-8 PM)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="preferred_times" value="Late Evening (8 PM+)" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Late Evening (8 PM+)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Class Types -->
+              <div>
+                <label class="block text-sm font-semibold text-foreground mb-3">
+                  Preferred Class Types <span class="text-destructive">*</span>
+                </label>
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input type="checkbox" name="class_types" value="Vinyasa Flow" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Vinyasa Flow</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="class_types" value="Hatha" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Hatha</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="class_types" value="Restorative" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Restorative</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="class_types" value="Hot Yoga" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Hot Yoga</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="class_types" value="Yin Yoga" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Yin Yoga</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="class_types" value="Kundalini" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Kundalini</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" name="class_types" value="Power Yoga" class="rounded border-input" />
+                    <span class="ml-2 text-muted-foreground">Power Yoga</span>
+                  </label>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-accent transition-colors"
+              >
+                Submit My Preferences
+              </button>
+            </form>
+
+            <div id="b12-form-done-567795fa-6bb0-4451-98e2-c09cfb8c5234" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+              Thank you! We've received your preferences and will personalize your experience.
+            </div>
+
+            <div id="b12-form-error-567795fa-6bb0-4451-98e2-c09cfb8c5234" class="hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+              There was an error submitting your form. Please try again.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="py-20 bg-secondary/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold text-foreground mb-4">What Our Users Say</h2>
+            <p class="text-xl text-muted-foreground">Hear from yogis who have transformed their practice with YogaFlow Pro</p>
+          </div>
+
+          <TestimonialsCarousel client:visible />
+        </div>
+      </section>
+
+      <!-- Upcoming Events Section -->
+      <section id="upcoming-events" class="py-20 bg-background">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold text-foreground mb-4">Upcoming Events</h2>
+            <p class="text-xl text-muted-foreground">Join our community workshops and special classes</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Event 1 -->
+            <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow">
+              <div class="h-40 bg-gradient-to-br from-primary to-accent"></div>
+              <div class="p-6">
+                <div class="text-sm font-semibold text-primary mb-2">APRIL 25, 2026</div>
+                <h3 class="text-xl font-heading font-semibold text-foreground mb-2">Morning Flow & Meditation Retreat</h3>
+                <p class="text-muted-foreground mb-4">A 2-hour guided session combining dynamic vinyasa flow with restorative meditation for beginners to advanced practitioners.</p>
+                <a href="#" class="inline-block text-primary font-semibold hover:text-accent transition-colors">Learn More →</a>
+              </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow">
+              <div class="h-40 bg-gradient-to-br from-accent to-primary"></div>
+              <div class="p-6">
+                <div class="text-sm font-semibold text-accent mb-2">MAY 3, 2026</div>
+                <h3 class="text-xl font-heading font-semibold text-foreground mb-2">Advanced Asana Workshop</h3>
+                <p class="text-muted-foreground mb-4">Master advanced poses and inversions with our expert instructors in a supportive, community-focused environment.</p>
+                <a href="#" class="inline-block text-primary font-semibold hover:text-accent transition-colors">Learn More →</a>
+              </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow">
+              <div class="h-40 bg-gradient-to-br from-secondary to-primary/30"></div>
+              <div class="p-6">
+                <div class="text-sm font-semibold text-primary mb-2">MAY 10, 2026</div>
+                <h3 class="text-xl font-heading font-semibold text-foreground mb-2">Wellness & Nutrition Talk</h3>
+                <p class="text-muted-foreground mb-4">Learn how to optimize your nutrition and lifestyle to enhance your yoga practice and overall wellness.</p>
+                <a href="#" class="inline-block text-primary font-semibold hover:text-accent transition-colors">Learn More →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Feed Section -->
+      <section id="blog" class="py-20 bg-secondary/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold text-foreground mb-4">Blog & Insights</h2>
+            <p class="text-xl text-muted-foreground">Yoga tips, wellness advice, and community updates</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Blog Post 1 -->
+            <article class="bg-background rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow group">
+              <div class="h-48 overflow-hidden">
+                <img src="https://cdn.b12.io/client_media/kRdMW9yE/e354f98d-38ae-11f1-b490-0242ac110002-K9V9myFqxuCLRgreOYRWv.jpg" alt="Yoga outdoors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-6">
+                <div class="text-sm text-primary font-semibold mb-2">WELLNESS</div>
+                <h3 class="text-xl font-heading font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">Finding Your Perfect Yoga Style</h3>
+                <p class="text-muted-foreground mb-4">Explore different yoga styles to find the one that resonates with your body, mind, and spirit. From vigorous vinyasa to gentle yin, discover your ideal practice.</p>
+                <a href="#" class="inline-block text-primary font-semibold hover:text-accent transition-colors">Read More →</a>
+              </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="bg-background rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow group">
+              <div class="h-48 overflow-hidden">
+                <img src="https://cdn.b12.io/client_media/kRdMW9yE/e34a192d-38ae-11f1-a70e-0242ac110002-qqtU77r16fisqP9TrLjtu.jpg" alt="Meditation and mindfulness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-6">
+                <div class="text-sm text-primary font-semibold mb-2">MINDFULNESS</div>
+                <h3 class="text-xl font-heading font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">Meditation Techniques for Busy Lives</h3>
+                <p class="text-muted-foreground mb-4">Discover practical meditation techniques you can incorporate into your daily routine, even with a hectic schedule. Find inner peace anywhere, anytime.</p>
+                <a href="#" class="inline-block text-primary font-semibold hover:text-accent transition-colors">Read More →</a>
+              </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="bg-background rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow group">
+              <div class="h-48 overflow-hidden">
+                <img src="https://cdn.b12.io/client_media/kRdMW9yE/e323eb55-38ae-11f1-a819-0242ac110002-K4NzcpuovMu2JLFR5wD28.jpg" alt="Community yoga class" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-6">
+                <div class="text-sm text-primary font-semibold mb-2">COMMUNITY</div>
+                <h3 class="text-xl font-heading font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">Building Your Yoga Community</h3>
+                <p class="text-muted-foreground mb-4">Learn how to connect with other yogis, find accountability partners, and create a supportive community around your practice.</p>
+                <a href="#" class="inline-block text-primary font-semibold hover:text-accent transition-colors">Read More →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="py-20 bg-background">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+            <p class="text-xl text-muted-foreground">Everything you need to know about YogaFlow Pro</p>
+          </div>
+
+          <FAQAccordion client:visible />
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" class="py-20 bg-secondary/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-heading font-bold text-foreground mb-4">Our Team</h2>
+            <p class="text-xl text-muted-foreground">Meet the experts behind YogaFlow Pro</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Team Member 1 -->
+            <div class="text-center">
+              <div class="mb-4 flex justify-center">
+                <img src="https://cdn.b12.io/client_media/kRdMW9yE/e342011e-38ae-11f1-81f8-0242ac110002-MM72OMxOXy_Ow9l-3Y_9z.jpg" alt="Team member" class="w-32 h-40 rounded-lg object-cover" />
+              </div>
+              <h3 class="text-lg font-heading font-semibold text-foreground mb-1">Aarav Sharma</h3>
+              <p class="text-primary font-semibold mb-3">Founder & CEO</p>
+              <p class="text-muted-foreground text-sm">Certified yoga instructor with 10+ years of experience in wellness and mindfulness.</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="text-center">
+              <div class="mb-4 flex justify-center">
+                <img src="https://cdn.b12.io/client_media/kRdMW9yE/e342011e-38ae-11f1-81f8-0242ac110002-MM72OMxOXy_Ow9l-3Y_9z.jpg" alt="Team member" class="w-32 h-40 rounded-lg object-cover" />
+              </div>
+              <h3 class="text-lg font-heading font-semibold text-foreground mb-1">Vihaan Gupta</h3>
+              <p class="text-primary font-semibold mb-3">Head of Technology</p>
+              <p class="text-muted-foreground text-sm">Tech innovator passionate about building tools that enhance wellness and user experience.</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="text-center">
+              <div class="mb-4 flex justify-center">
+                <img src="https://cdn.b12.io/client_media/kRdMW9yE/e342011e-38ae-11f1-81f8-0242ac110002-MM72OMxOXy_Ow9l-3Y_9z.jpg" alt="Team member" class="w-32 h-40 rounded-lg object-cover" />
+              </div>
+              <h3 class="text-lg font-heading font-semibold text-foreground mb-1">Ishaan Verma</h3>
+              <p class="text-primary font-semibold mb-3">Community Manager</p>
+              <p class="text-muted-foreground text-sm">Dedicated to fostering a supportive and inclusive yoga community for all levels.</p>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="text-center">
+              <div class="mb-4 flex justify-center">
+                <img src="https://cdn.b12.io/client_media/kRdMW9yE/e342011e-38ae-11f1-81f8-0242ac110002-MM72OMxOXy_Ow9l-3Y_9z.jpg" alt="Team member" class="w-32 h-40 rounded-lg object-cover" />
+              </div>
+              <h3 class="text-lg font-heading font-semibold text-foreground mb-1">Ayaan Singh</h3>
+              <p class="text-primary font-semibold mb-3">Lead Designer</p>
+              <p class="text-muted-foreground text-sm">Creates intuitive and beautiful user experiences that reflect the calm of yoga practice.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+    <RequiredB12FooterScripts />
+  </body>
+</html>

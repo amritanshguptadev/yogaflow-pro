@@ -1,0 +1,211 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RequiredB12HeadScripts from '../components/RequiredB12HeadScripts.astro';
+import RequiredB12FooterScripts from '../components/RequiredB12FooterScripts.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Contact YogaFlow Pro</title>
+    <meta name="description" content="Get in touch with YogaFlow Pro. Send us your inquiries, feedback, and support requests." />
+    <RequiredB12HeadScripts />
+  </head>
+
+  <body>
+    <Header currentPage="/contact" />
+
+    <main>
+      <!-- Page Header -->
+      <section class="py-12 sm:py-16 bg-gradient-to-br from-secondary via-background to-accent/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-foreground mb-2 sm:mb-4">
+            Contact Us
+          </h1>
+          <p class="text-base sm:text-lg text-muted-foreground">
+            We'd love to hear from you. Get in touch with any questions, feedback, or support requests.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Content -->
+      <section class="py-12 sm:py-20 bg-background">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
+            <!-- Contact Info -->
+            <div>
+              <h2 class="text-xl sm:text-2xl font-heading font-semibold text-foreground mb-6 sm:mb-8">Get In Touch</h2>
+
+              <div class="space-y-6">
+                <!-- Email -->
+                <div>
+                  <h3 class="font-semibold text-foreground mb-2">Email</h3>
+                  <a href="mailto:support@yogaflowpro.com" class="text-primary hover:text-accent transition-colors">
+                    support@yogaflowpro.com
+                  </a>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                  <h3 class="font-semibold text-foreground mb-2">Phone</h3>
+                  <a href="tel:+1-555-123-4567" class="text-primary hover:text-accent transition-colors">
+                    +1 (555) 123-4567
+                  </a>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                  <h3 class="font-semibold text-foreground mb-2">Hours</h3>
+                  <p class="text-muted-foreground">
+                    Monday - Friday: 9am - 6pm EST<br />
+                    Saturday: 10am - 4pm EST<br />
+                    Sunday: Closed
+                  </p>
+                </div>
+
+                <!-- Follow Us -->
+                <div>
+                  <h3 class="font-semibold text-foreground mb-4">Follow Us</h3>
+                  <div class="flex gap-4">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors">
+                      <span class="sr-only">Facebook</span>
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors">
+                      <span class="sr-only">Twitter</span>
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                      </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors">
+                      <span class="sr-only">Instagram</span>
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/>
+                        <circle cx="17.5" cy="6.5" r="1.5"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="lg:col-span-2">
+              <div class="bg-secondary/30 rounded-xl p-8 border border-border">
+                <h2 class="text-2xl font-heading font-semibold text-foreground mb-6">Send us a Message</h2>
+
+                <form data-form-id="4e7b885d-ab3a-4d02-9e2a-b3c92cff4e09" class="space-y-6">
+                  <!-- Name -->
+                  <div>
+                    <label for="name" class="block text-sm font-semibold text-foreground mb-2">
+                      Name <span class="text-destructive">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full px-4 py-2 rounded-lg border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Your name"
+                    />
+                  </div>
+
+                  <!-- Email -->
+                  <div>
+                    <label for="email" class="block text-sm font-semibold text-foreground mb-2">
+                      Email <span class="text-destructive">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full px-4 py-2 rounded-lg border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+
+                  <!-- Phone -->
+                  <div>
+                    <label for="phone" class="block text-sm font-semibold text-foreground mb-2">
+                      Phone Number <span class="text-destructive">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      class="w-full px-4 py-2 rounded-lg border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+
+                  <!-- Subject -->
+                  <div>
+                    <label for="subject" class="block text-sm font-semibold text-foreground mb-2">
+                      Subject <span class="text-destructive">*</span>
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      required
+                      class="w-full px-4 py-2 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Select a subject</option>
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Scheduling Help">Scheduling Help</option>
+                      <option value="Technical Support">Technical Support</option>
+                      <option value="Feedback">Feedback</option>
+                      <option value="Partnership">Partnership</option>
+                    </select>
+                  </div>
+
+                  <!-- Message -->
+                  <div>
+                    <label for="message" class="block text-sm font-semibold text-foreground mb-2">
+                      Message <span class="text-destructive">*</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows="6"
+                      class="w-full px-4 py-2 rounded-lg border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Your message here..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="w-full px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-accent transition-colors"
+                  >
+                    Send Message
+                  </button>
+                </form>
+
+                <div id="b12-form-done-4e7b885d-ab3a-4d02-9e2a-b3c92cff4e09" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+                  Thank you for your message! We'll get back to you shortly.
+                </div>
+
+                <div id="b12-form-error-4e7b885d-ab3a-4d02-9e2a-b3c92cff4e09" class="hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+                  There was an error sending your message. Please try again.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+    <RequiredB12FooterScripts />
+  </body>
+</html>
