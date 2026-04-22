@@ -1,22 +1,15 @@
 import type { APIRoute } from 'astro'
-import b12Context from '../b12Context.json'
 
-const stagingRobotsTxt = `\
-User-agent: *
-Disallow: /
-`
-
-const productionRobotsTxt = `\
+const robotsTxt = `\
 User-agent: *
 Disallow: /dist/
 `
 
-const getRobotsTxt = (sitemapURL: URL) => `${b12Context.is_preview ? stagingRobotsTxt : productionRobotsTxt
-    }
+const getRobotsTxt = (sitemapURL: URL) => `${robotsTxt}
 Sitemap: ${sitemapURL.href}
 `
 
 export const GET: APIRoute = ({ site }) => {
-    const sitemapURL = new URL('sitemap-index.xml', site)
+    const sitemapURL = new URL('sitemap-index.xml', site ?? 'http://localhost:4321')
     return new Response(getRobotsTxt(sitemapURL))
 }
