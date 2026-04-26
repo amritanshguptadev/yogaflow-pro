@@ -1,0 +1,64 @@
+---
+import MobileNav from './MobileNav.tsx';
+
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage } = Astro.props;
+
+const navLinks = [
+  { label: 'About', href: '/#about' },
+  { label: 'Services', href: '/#services' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Scheduling', href: '/#scheduling' },
+  { label: 'Blog', href: '/#blog' },
+  { label: 'Upcoming Events', href: '/#upcoming-events' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Testimonials', href: '/#testimonials' },
+  { label: 'Team', href: '/#team' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-background/98 backdrop-blur-md border-b border-border/50 shadow-sm transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-5 flex items-center gap-4 md:gap-6">
+    <a href="/" class="flex items-center gap-2 flex-shrink-0">
+      <div class="w-11 h-11 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
+        <span class="text-white font-bold text-lg">ʎ</span>
+      </div>
+      <span class="text-lg md:text-xl font-heading font-semibold text-foreground hidden sm:inline">
+        YogaFlow Pro
+      </span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-0.5 bg-secondary/30 rounded-lg p-1 flex-shrink-0">
+      {navLinks.slice(0, 5).map((link) => (
+        <a
+          href={link.href}
+          class={`px-3 py-2.5 rounded-md text-xs font-semibold transition-all duration-200 whitespace-nowrap ${
+            currentPage === link.href
+              ? 'text-primary bg-background shadow-sm'
+              : 'text-muted-foreground hover:text-primary hover:bg-background/60'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <div class="hidden md:flex items-center gap-2 flex-shrink-0">
+      <a href="/browse-classes" class="px-4 py-2.5 text-sm font-semibold text-primary hover:bg-secondary/50 rounded-lg transition-all duration-200">
+        Browse Classes
+      </a>
+      <a href="/login" class="px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-secondary/50 rounded-lg transition-all duration-200">
+        Login
+      </a>
+      <a href="/signup" class="px-5 py-2.5 text-sm font-semibold bg-gradient-to-r from-primary to-accent text-white rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
+        Get Started
+      </a>
+    </div>
+
+    <MobileNav client:load />
+  </nav>
+</header>
